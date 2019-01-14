@@ -1,12 +1,13 @@
 $(function(){
-  var l = new Login();
+  var l = new Login();  
 })
-
 
 class Login {
   constructor() {
     this.submitEvent()
   }
+
+
 
   submitEvent(){
     $('form').submit((event)=>{
@@ -30,12 +31,13 @@ class Login {
       success: function(php_response){
         if (php_response.msg == "OK") {
           window.location.href = 'main.html';
+          
         }else {
           alert(php_response.msg);
         }
       },
       error: function(){
-        alert("error en la comunicación con el servidor");
+        alert("error en la conexion");
       }
     })
   }
